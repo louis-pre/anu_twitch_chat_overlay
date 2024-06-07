@@ -87,7 +87,7 @@ const init = async currentStream => {
   if (enabled) {/* was enabled before the raid/scroll down */
     initialSetup()
   } else if (window._TCO.currentGlobalSettings.autoStart === 'true') {
-    toggle.click()
+    setTimeout(() => toggle.click(), 500);
   }
 }
 
