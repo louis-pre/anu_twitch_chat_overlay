@@ -8,8 +8,13 @@ const init = async _ => {
   force_vod_checkbox.addEventListener('change', e => {
     setGlobalSettings('forceVod', e.target.checked ? 'true' : 'false')
   })
-
   force_vod_checkbox.checked = window._TCO.currentGlobalSettings.forceVod === 'true'
+
+  const auto_start_checkbox = document.querySelector('#auto_start')
+  auto_start_checkbox.addEventListener('change', e => {
+    setGlobalSettings('autoStart', e.target.checked ? 'true' : 'false')
+  })
+  auto_start_checkbox.checked = window._TCO.currentGlobalSettings.autoStart === 'true'
 }
 
 document.addEventListener('DOMContentLoaded', init)
