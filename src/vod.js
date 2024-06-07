@@ -48,7 +48,6 @@ whenUrlChanged(async _ => {
   await getGlobalSettings()
   const oldVideo = window._TCO.currentVOD,
     newVideo = getCurrentVOD()
-  console.log("TEST VOD", oldVideo, newVideo);
   if (newVideo === oldVideo)
     return
   cleanUp(false)

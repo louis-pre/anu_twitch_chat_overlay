@@ -48,7 +48,6 @@ whenUrlChanged(async _ => {
   await getGlobalSettings()
   const oldStream = window._TCO.currentStream,
     newStream = getCurrentStream()
-  console.log("TEST STREAM", newStream, oldStream);
   if (newStream === oldStream)
     return
   cleanUp(true)
