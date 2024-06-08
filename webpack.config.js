@@ -3,6 +3,8 @@ const path = require('path');
 module.exports = {
   entry: {
     index: './src/index.js',
+    script_injector: './src/script_injector.js',
+    monkey_patch: './src/monkey_patch.js',
     options: './src/options.js'
   },
   output: {

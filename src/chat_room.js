@@ -3,7 +3,9 @@ const { isRightColumnClosed, openAndCloseRightColumn } = require('./current_page
 const joinChatRoom = () => {
   // TODO find better way to join chat room, we should be able to
   // hook directly into Twitch's callback
-  openAndCloseRightColumn()
+  console.log(window.wrappedJSObject.chat_websocket);
+
+  // openAndCloseRightColumn()
 }
 
 const isInChatRoom = () => {
