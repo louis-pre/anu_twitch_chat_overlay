@@ -1,3 +1,5 @@
+// see https://stackoverflow.com/questions/9515704/access-variables-and-functions-defined-in-page-context-from-an-extension
+
 (function () {
     // Save the original WebSocket constructor
     const OriginalWebSocket = window.WebSocket;
