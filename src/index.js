@@ -41,8 +41,12 @@ const init = async (currentStream, currentVOD) => {
 }
 
 const isPlayerButtonLoaded = () => Boolean(document.querySelector(`.${playerButtonClass}`))
-const debouncedInit = debounce(init, 200)
-const checkIfPlayerButtonLoaded = doOnIntervalWithTimeoutAndOverwrite(isPlayerButtonLoaded, 500, 4000)
+// Factors to take into account when setting these values:
+// - if debounceDuration <= checkInterval then there is a risk for debouncedInit to be called after the debouncedDuration was elapsed.
+// - raising debouncedDuration increases the time it takes ATCO to init
+// - reducing checkInterval increases the amount of DOM checks, should be fine though 
+const debouncedInit = debounce(init, 300)
+const checkIfPlayerButtonLoaded = doOnIntervalWithTimeoutAndOverwrite(isPlayerButtonLoaded, 300, 4000)
 
 whenElementLoaded(document.body, playerButtonClass, async _ => {
   const currentStream = await getCurrentStream()
